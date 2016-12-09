@@ -371,5 +371,5 @@ dcr_pending_conn(State = #state{pending_conn = Pending}) when Pending > 0 ->
 %% Return the current time in seconds, used for timeouts.
 -spec now_secs() -> seconds().
 now_secs() ->
-  {MegaSecs, Secs, _MilliSecs} = erlang:now(),
+  {MegaSecs, Secs, _MilliSecs} = erlang:timestamp(),
   MegaSecs * 1000 + Secs.
